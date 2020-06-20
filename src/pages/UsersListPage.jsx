@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import UsersList from '../components/UsersList'
 import UsersPagination from '../components/UsersPagination'
 import request from '../utils/request'
@@ -14,7 +14,7 @@ class UserListPage extends React.Component {
   async componentDidMount() {
     await request({url: 'users'}).then(res => {
       const users = res.data
-      const totalPages = Math.ceil(users.length / this.state.pageLimit);
+      const totalPages = Math.ceil(users.length / this.state.pageLimit)
   
       this.setState({
         users, 
@@ -30,13 +30,13 @@ class UserListPage extends React.Component {
   render() {
     const { users, loading, totalPages, currentPage, pageLimit } = this.state
     const offset = (currentPage - 1) * pageLimit
-    const shownUses = users.slice(offset, offset + pageLimit)
+    const shownUsers = users.slice(offset, offset + pageLimit)
 
     return (loading ? 
     <CircularProgress /> : 
     <React.Fragment>
       <UsersList 
-        users={shownUses} 
+        users={shownUsers} 
       />
       <UsersPagination 
         count={totalPages} page={currentPage} onChange={this.pageHandler}  

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import UserProfile from '../components/UserProfile'
 import request from '../utils/request'
 import { CircularProgress } from '@material-ui/core'

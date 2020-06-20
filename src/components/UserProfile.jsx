@@ -7,7 +7,7 @@ import {
   Typography,
   Avatar,
   makeStyles, 
-} from '@material-ui/core';
+} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,11 +33,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '40px'
   },
 
-}));
+}))
 
-export default function UserProfile(props) {
-  const classes = useStyles();
-  const {user} = props
+export default function UserProfile({user}) {
+  const classes = useStyles()
   return (  
     <Container>
       <Card className={classes.root}>

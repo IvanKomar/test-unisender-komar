@@ -1,6 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, List } from '@material-ui/core';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { Container, List } from '@material-ui/core'
 import UserListItem from './UserListItem'
 
 
@@ -33,16 +33,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     color: 'black'
   }
-}));
+}))
 
-export default function UsersList(props) {
+export default function UsersList({users}) {
 
   const classes = useStyles()
 
   return (
     <Container className={classes.root}>
       <List >
-        { props.users.map((user) => 
+        { users.map((user) => 
             <UserListItem
               key={user.id}
               id={user.id}

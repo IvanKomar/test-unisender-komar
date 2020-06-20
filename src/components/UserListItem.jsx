@@ -6,30 +6,30 @@ import {
   ListItemAvatar,
   Avatar,
   Fab
-} from '@material-ui/core';
+} from '@material-ui/core'
 import {Link} from 'react-router-dom'
-export default function UserListItem(props) {
+export default function UserListItem({classes, login, avatar, id, url}) {
   
   return (
-    <ListItem divider className={props.classes.root} key={props.id}>
-      <Link to={`/users/${props.login}`} className={props.classes.linkStyle}>
+    <ListItem divider className={classes.root} key={id}>
+      <Link to={`/users/${login}`} className={classes.linkStyle}>
         <ListItemAvatar>
           <Avatar
-            className={props.classes.largeAvatar}
-            alt={props.login}
-            src={props.avatar}
+            className={classes.largeAvatar}
+            alt={login}
+            src={avatar}
           />
         </ListItemAvatar>
-        <ListItemText className={props.classes.text} id={props.id} primary={props.login} />
+        <ListItemText className={classes.text} id={id} primary={login} />
       </Link>
       <ListItemSecondaryAction>
         <Fab
-          className={props.classes.btn}
+          className={classes.btn}
           variant="extended"
           size="small"
           color="inherit"
           onClick={() => {
-            window.open(props.url,'_blank')
+            window.open(url,'_blank')
           }}
         >
           Кнопка

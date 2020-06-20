@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import {
   Switch,
   Route,
-} from "react-router-dom";
+} from "react-router-dom"
 import UsersListPage from './pages/UsersListPage'
-import UserPage from './pages/UserPage';
+import UserPage from './pages/UserPage'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/users/:username" component={UserPage} />
       </Switch>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
