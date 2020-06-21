@@ -10,6 +10,10 @@ import {
 import {Link} from 'react-router-dom'
 export default function UserListItem({classes, login, avatar, id, url}) {
   
+  const openBlankProfile = () => {
+    window.open(url,'_blank')
+  }
+  
   return (
     <ListItem divider className={classes.root} key={id}>
       <Link to={`/users/${login}`} className={classes.linkStyle}>
@@ -28,9 +32,7 @@ export default function UserListItem({classes, login, avatar, id, url}) {
           variant="extended"
           size="small"
           color="inherit"
-          onClick={() => {
-            window.open(url,'_blank')
-          }}
+          onClick={openBlankProfile}
         >
           Кнопка
         </Fab>
